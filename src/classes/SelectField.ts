@@ -30,8 +30,11 @@ export class SelectField  implements IField {
     setValue(event: Event): any {
         event.preventDefault();
         event.stopImmediatePropagation();
-        this.Value = this.Input.value;
+        this.Value = event.target.value;
     }
 
+    getValue(): string {
+        return this.Value;
+    }
     
 }

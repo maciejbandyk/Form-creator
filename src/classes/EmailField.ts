@@ -3,13 +3,12 @@ import { FieldType } from './../enums/field-type.enum';
 import { FieldLabel } from './FieldLabel';
 
 export class EmailField  implements IField {
-
     constructor(name: string, label: string, value: string | '') {
-        
         this.Name = name;
         this.Label = label;
         this.Value = value;
     }
+
     Name: string;    
     Label: string;
     Type: FieldType = FieldType.Email;
@@ -32,8 +31,10 @@ export class EmailField  implements IField {
     setValue(event: Event): any {
         event.preventDefault();
         event.stopImmediatePropagation();
-        this.Value = this.Input.value;
+        this.Value = event.target.value;
     }
 
-    
+    getValue(): string {
+        return this.Value;
+    }
 }

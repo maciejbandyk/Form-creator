@@ -1,4 +1,4 @@
-import { Field } from './../interfaces/ifield';
+import { IField } from './../interfaces/ifield';
 import { FieldType } from './../enums/field-type.enum';
 import { FieldLabel } from './FieldLabel';
 
@@ -28,7 +28,11 @@ export class CheckboxField implements IField {
     setValue(event: Event): any {
         event.preventDefault();
         event.stopImmediatePropagation();
-        this.Value = this.Input.value;
+        this.Value = event.target.value;
+    }
+
+    getValue(): string{
+        return this.Value;
     }
 
 

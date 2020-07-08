@@ -23,7 +23,6 @@ export class DateField  implements IField {
         container.appendChild(element);
         element.value = this.Value;
         this.Input = element;
-
         element.addEventListener('keyup', this.setValue);
         element.addEventListener('paste', this.setValue);
         element.addEventListener('cut', this.setValue);
@@ -32,8 +31,10 @@ export class DateField  implements IField {
     setValue(event: Event): any {
         event.preventDefault();
         event.stopImmediatePropagation();
-        this.Value = this.Input.value;
+        this.Value = event.target.value;
     }
 
-    
+    getValue(): string {
+        return this.Value;
+    }
 }
