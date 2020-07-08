@@ -1,5 +1,5 @@
-export interface DataStorage {
-    saveDocument(params: any): string;
+export interface IDataStorage {
+    saveDocument(param: any): string;
     loadDocument(param: string): object;
-    getDocuments(): number[];
+    getDocuments(): string[];
 }
