@@ -1,8 +1,8 @@
-import { Field } from './../interfaces/ifield';
+import { IField } from './../interfaces/ifield';
 import { FieldType } from './../enums/field-type.enum';
 import { FieldLabel } from './FieldLabel';
 
-export class DateField  implements Field {
+export class DateField  implements IField {
     
     constructor(name: string, label: string, value: string | null) {
         

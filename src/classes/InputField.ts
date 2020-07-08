@@ -1,8 +1,8 @@
 import { FieldLabel } from './FieldLabel';
-import { Field } from './../interfaces/ifield';
+import { IField } from './../interfaces/ifield';
 import { FieldType } from './../enums/field-type.enum';
 
-export class InputField implements Field {
+export class InputField implements IField {
 
     constructor(name: string, label: string, value: string) {
         

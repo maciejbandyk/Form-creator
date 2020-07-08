@@ -2,7 +2,7 @@ import { Field } from './../interfaces/ifield';
 import { FieldType } from './../enums/field-type.enum';
 import { FieldLabel } from './FieldLabel';
 
-export class CheckboxField implements Field {
+export class CheckboxField implements IField {
     constructor(name: string, label: string, value: string) {
        
         this.Name = name;

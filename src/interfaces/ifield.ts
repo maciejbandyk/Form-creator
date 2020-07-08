@@ -1,6 +1,6 @@
 import { FieldType } from "../enums/field-type.enum";
 
-export interface Field {
+export interface IField {
     Name: string;
     Label: string;
     Type: FieldType;
