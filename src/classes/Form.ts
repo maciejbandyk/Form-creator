@@ -1,3 +1,4 @@
+import { FieldType } from './../enums/field-type.enum';
 import { Field } from './../interfaces/ifield';
 
 
@@ -16,7 +17,7 @@ export class Form {
 
     getValue() {
         return this.fieldsArray.map(field => {
-            return {name: field.Name, value: field.Value };
+            return {name: field.Name, type: field.Type, value: field.Value };
         })
     }
 }
