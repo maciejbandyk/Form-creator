@@ -6,5 +6,5 @@ export interface IField {
     Type: FieldType;
     Value: string | boolean;
     render(props: any): void;
-    getValue(): string;
+    getValue(): string | boolean;
 }
