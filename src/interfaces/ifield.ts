@@ -7,4 +7,5 @@ export interface IField {
     Value: string | boolean;
     render(props: any): void;
     getValue(): string | boolean;
+    setValue(props: Event) : any;
 }

@@ -5,7 +5,6 @@ import { FieldType } from './../enums/field-type.enum';
 export class InputField implements IField {
 
     constructor(name: string, label: string, value: string) {
-        
         this.Name = name;
         this.Label = label;
         this.Value = value;
@@ -24,9 +23,15 @@ export class InputField implements IField {
         container.appendChild(element);
         element.value = this.Value;
         this.Input = element;
-        element.addEventListener('keyup', this.setValue);
-        element.addEventListener('paste', this.setValue);
-        element.addEventListener('cut', this.setValue);
+        element.addEventListener('keyup', (ev) => {
+            this.Value = ev.target.value;
+        });
+        element.addEventListener('paste', (ev) => {
+            this.Value = ev.target.value;
+        });
+        element.addEventListener('cut', (ev) => {
+            this.Value = ev.target.value;
+        });
     }
     
     setValue(event: Event): any {

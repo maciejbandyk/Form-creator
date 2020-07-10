@@ -23,9 +23,15 @@ export class EmailField  implements IField {
         element.value = this.Value;
         this.Input = element;
 
-        element.addEventListener('keyup', this.setValue);
-        element.addEventListener('paste', this.setValue);
-        element.addEventListener('cut', this.setValue);
+        element.addEventListener('keyup', (ev) => {
+            this.Value = ev.target.value;
+        });
+        element.addEventListener('paste', (ev) => {
+            this.Value = ev.target.value;
+        });
+        element.addEventListener('cut', (ev) => {
+            this.Value = ev.target.value;
+        });
     }
 
     setValue(event: Event): any {

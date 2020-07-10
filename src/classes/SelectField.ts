@@ -30,7 +30,9 @@ export class SelectField  implements IField {
         })
         element.value = this.Value;
         this.Input = element;
-        element.addEventListener('change', this.setValue);
+        element.addEventListener('change', (ev) => {
+            this.Value = ev.target.value;
+        });
     }
 
     setValue(event: Event): any {

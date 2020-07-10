@@ -3,13 +3,12 @@ import { FieldType } from './../enums/field-type.enum';
 import { FieldLabel } from './FieldLabel';
 
 export class DateField  implements IField {
-    
     constructor(name: string, label: string, value: string | null) {
-        
         this.Name = name;
         this.Label = label;
         this.Value = value;
     }
+
     Name: string;    
     Label: string;
     Type: FieldType = FieldType.Date;
@@ -23,9 +22,9 @@ export class DateField  implements IField {
         container.appendChild(element);
         element.value = this.Value;
         this.Input = element;
-        element.addEventListener('keyup', this.setValue);
-        element.addEventListener('paste', this.setValue);
-        element.addEventListener('cut', this.setValue);
+        element.addEventListener('change', (ev) => {
+            this.Value = ev.target.value;
+        });
     }
 
     setValue(event: Event): any {

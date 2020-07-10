@@ -20,8 +20,8 @@ export class CheckboxField implements IField {
         const element = document.createElement('input');
         element.setAttribute('type', this.Type);
         container.appendChild(element);
-        element.value = '';
         this.Input = element;
+        if(this.Value === true) { element.checked = true };
         element.addEventListener('change', () => {
             if(element.checked == true) {
                 this.Value = true;
