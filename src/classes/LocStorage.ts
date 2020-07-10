@@ -1,4 +1,5 @@
 import { IDataStorage } from "../interfaces/idata-storage";
+import { Form } from "./Form";
 
 export class LocStorage implements IDataStorage {
 
@@ -8,13 +9,18 @@ export class LocStorage implements IDataStorage {
 
     private DataStorage: any;
 
-    saveDocument(documentObject: object): string {
+    saveDocument(documentObject: Form): string {
         const savedDocument = this.DataStorage.setItem(`document-${Date.now()}`, JSON.stringify(documentObject));
         return savedDocument;
     }    
 
-    loadDocument(param: string): object {
-        const loadedDocument = this.DataStorage.getItem(`document-${param}`);
+    saveEditedDocument(documentObject: Form, key: string): string {
+        const savedDocument = this.DataStorage.setItem(key, JSON.stringify(documentObject));
+        return savedDocument;
+    }
+
+    loadDocument(key: string): object {
+        const loadedDocument = this.DataStorage.getItem(key);
         return loadedDocument;
     }
 
@@ -26,5 +32,9 @@ export class LocStorage implements IDataStorage {
             documentsArray.push(key);
         }
         return documentsArray;
+    }
+
+    removeDocument(key: string): void {
+        this.DataStorage.removeItem(key);
     }
 }
