@@ -1,3 +1,6 @@
+import { LocStorage } from './classes/LocStorage';
 import { App } from "./classes/App";
+import { DocumentList } from './classes/DocumentList';
 
-const app = new App();
+export const app = new App();
+app.renderDocument(app.TestFormm);
