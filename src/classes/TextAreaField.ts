@@ -19,7 +19,7 @@ export class TextAreaField  implements IField {
     render(container: HTMLTextAreaElement): void {
         new FieldLabel(container, 'question-label', this.Label);
         const element = document.createElement('textarea');
-        element.setAttribute('type', this.Type);
+        element.value = this.Value;
         container.appendChild(element);     
         this.Input = element;
         element.addEventListener('keyup', (ev) => {

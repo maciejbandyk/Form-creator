@@ -31,9 +31,9 @@ export class App {
     renderDocument(form: Form) {
         form.render(this.DocumentContainer);
     }
+
     renderDocumentToEdit(documentObject: any): void {
         const fields: IField[] = [];
-
         for (const key in documentObject) {
             if (documentObject.hasOwnProperty(key)) {
                 const element = documentObject[key];
