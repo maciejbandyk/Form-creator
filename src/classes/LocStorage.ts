@@ -7,7 +7,7 @@ export class LocStorage implements IDataStorage {
         this.DataStorage = window.localStorage;   
     }
 
-    private DataStorage: any;
+    DataStorage: any;
 
     saveDocument(documentObject: Form): string {
         const savedDocument = this.DataStorage.setItem(`document-${Date.now()}`, JSON.stringify(documentObject));

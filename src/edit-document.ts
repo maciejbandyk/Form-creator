@@ -1,11 +1,9 @@
-import { LocStorage } from './classes/LocStorage';
+import { app } from './index';
 import { DocumentList } from './classes/DocumentList';
 import { Router } from "./classes/Router";
-import { App } from './classes/App';
 
 const id = Router.getParam();
-const docList = new DocumentList();
-const ab = docList.getDocument(id);
-const doc = new App();
-doc.renderDocumentToEdit(ab);
+const listOfDocuments = new DocumentList();
+const requestedDocument = listOfDocuments.getDocument(id);
+app.renderDocumentToEdit(requestedDocument);
 

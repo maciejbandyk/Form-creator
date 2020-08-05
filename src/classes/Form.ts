@@ -43,14 +43,14 @@ export class Form {
     saveEdit(data: Form, key: string): void {
         const storage = new LocStorage();
         storage.saveEditedDocument(data, key);
-        alert("Zapisano edycje dokumentu");
+        alert("Document saved");
         window.location.href = "index.html";
     }
     
     save(data: Form): void {
         const storage = new LocStorage();
         storage.saveDocument(data);
-        alert("Dokument został zapisany");    
+        alert("Document saved");    
         window.location.href = "index.html";
     }   
 

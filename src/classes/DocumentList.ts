@@ -22,6 +22,10 @@ export class DocumentList {
         return JSON.parse(documentObject);
     }
 
+    getLength(): number {
+        return this.getDocuments().length;
+    }
+
     render(container: HTMLElement): void {
         const table = document.createElement('table');  
         for (let r = 0; r < this.ListOfDocuments.length; r++) {
@@ -46,7 +50,10 @@ export class DocumentList {
                     binElement.addEventListener('click', (ev) => {
                         ev.stopImmediatePropagation();
                         ev.preventDefault();
+                        const value = confirm("Are you sure about deleting this document?");
+                        if (value===true) {
                         this.removeDocument(this.ListOfDocuments[r]);
+                        }
                     });
                     cell.appendChild(binElement); 
                 }
