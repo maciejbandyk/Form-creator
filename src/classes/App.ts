@@ -1,3 +1,4 @@
+import { Deserializer } from './Deserializer';
 import { TextAreaField } from './TextAreaField';
 import { SelectField } from './SelectField';
 import { EmailField } from './EmailField';
@@ -33,51 +34,7 @@ export class App {
     }
 
     renderDocumentToEdit(documentObject: any): void {
-        const fields: IField[] = [];
-        for (const key in documentObject) {
-            if (documentObject.hasOwnProperty(key)) {
-                const element = documentObject[key];
-                for (let i = 0; i < element.length; i++) {
-                    switch (element[i].Type) {
-                        case 'text':
-                            const instance1 = new InputField(element.Name, element.Label, element.Value);
-                            Object.assign(instance1, element[i]);
-                            fields.push(instance1);
-                            break;
-                        case 'checkbox':
-                            const instance2 = new CheckboxField(element.Name, element.Label, element.Value);
-                            Object.assign(instance2, element[i]);
-                            fields.push(instance2);
-                            break;
-                        case 'date':
-                            const instance3 = new DateField(element.Name, element.Label, element.Value);
-                            Object.assign(instance3, element[i]);
-                            fields.push(instance3);
-                            break;
-                        case 'email':
-                            const instance4 = new EmailField(element.Name, element.Label, element.Value);
-                            Object.assign(instance4, element[i]);
-                            fields.push(instance4);
-                            break;
-                        case 'radio':
-                            const instance5 = new SelectField(element.Name, element.Label, [], element.Value);
-                            Object.assign(instance5, element[i]);
-                            fields.push(instance5);
-                            break;
-                        case 'textarea':
-                            const instance6 = new TextAreaField(element.Name, element.Label, element.Value);
-                            Object.assign(instance6, element[i]);
-                            fields.push(instance6);
-                            break;
-                    
-                        default:
-                            break;
-                    }
-                }
-            }
-        }    
-        
-        const newFormEdit = new Form(fields);
+        const newFormEdit = new Form(Deserializer.Deserialize(documentObject));
         newFormEdit.render(this.DocumentContainer);
     }
 }
