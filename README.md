@@ -4,7 +4,7 @@
 
 Form-creator uses a number of open source projects to work properly:
 
-* [Parcel] - Yarn is a blazing fast, zero configuration web application bundler.
+* [Parcel] - Parcel is a blazing fast, zero configuration web application bundler.
 * [Node.js] - Node.js is an open-source, cross-platform, JavaScript runtime environment.
 
 ### Installation
@@ -21,8 +21,8 @@ $ npm install
 To run this project:
 
 ```sh
-$cd src
-$parcel index.html
+$ cd src
+$ parcel index.html
 ```
 
 License
