@@ -28,6 +28,7 @@ export class DocumentList {
 
     render(container: HTMLElement): void {
         const table = document.createElement('table');  
+        table.classList.add('table', 'table-striped', 'table-responsive-sm');
         for (let r = 0; r < this.ListOfDocuments.length; r++) {
             const row = document.createElement('tr');
             for (let c = 0; c < 4; c++) {

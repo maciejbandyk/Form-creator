@@ -10,19 +10,21 @@ export class Form {
 
     private fieldsArray: IField[];
 
-    render(pole: HTMLElement): void {
+    render(container: HTMLElement): void {
         const formDocument: HTMLElement = document.createElement("form");
-        formDocument.classList.add("form");
+        formDocument.classList.add("form-horizontal");
         const saveButton = document.createElement('button');
+        saveButton.classList.add('btn');
         saveButton.innerHTML = "Save";
         const backwardButton = document.createElement('button');
+        backwardButton.classList.add('btn', 'btn-back');
         backwardButton.innerHTML = "Back";
         this.fieldsArray.forEach(field => {field.render(formDocument)});
         formDocument.appendChild(saveButton);
         saveButton.addEventListener('click', (ev) => { 
             ev.preventDefault();
             ev.stopImmediatePropagation();
-            if(Router.getParam() != null) {
+            if(Router.getParam() != null && !Router.getParam().startsWith('F-')) {
                 this.saveEdit(this, Router.getParam());
             }
             else { 
@@ -30,8 +32,8 @@ export class Form {
             }
         });
         formDocument.appendChild(backwardButton);
-        backwardButton.addEventListener('click', this.back);
-        pole.appendChild(formDocument);
+        backwardButton.addEventListener('click', function() {window.location.href = "index.html"});
+        container.appendChild(formDocument);
     }
 
     getValue(): object {
@@ -43,18 +45,14 @@ export class Form {
     saveEdit(data: Form, key: string): void {
         const storage = new LocStorage();
         storage.saveEditedDocument(data, key);
-        alert("Document saved");
-        window.location.href = "index.html";
+        alert("Document edited");
+        window.location.href = "document-list.html";
     }
     
     save(data: Form): void {
         const storage = new LocStorage();
         storage.saveDocument(data);
         alert("Document saved");    
-        window.location.href = "index.html";
-    }   
-
-    back(): void {
         window.location.href = "index.html";
     }   
 }

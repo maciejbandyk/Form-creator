@@ -16,10 +16,14 @@ export class CheckboxField implements IField {
     Input: HTMLInputElement;
 
     render(container: HTMLElement): void {
-        new FieldLabel(container, 'question-label', this.Label);
+        const fieldContainer = document.createElement('div');
+        fieldContainer.classList.add('form-group');
+        new FieldLabel(fieldContainer, 'question-label', this.Label);
         const element = document.createElement('input');
+        //element.classList.add('form-control');
         element.setAttribute('type', this.Type);
-        container.appendChild(element);
+        fieldContainer.appendChild(element);
+        container.appendChild(fieldContainer);
         this.Input = element;
         if(this.Value === true) { element.checked = true };
         element.addEventListener('change', () => {

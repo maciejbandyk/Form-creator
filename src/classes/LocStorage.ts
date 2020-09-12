@@ -28,13 +28,32 @@ export class LocStorage implements IDataStorage {
         const documents: object = {...this.DataStorage};
         const documentsArray: string[] = [];
         for(let key in documents) {
-            if (!documents.hasOwnProperty(key)) continue;
-            documentsArray.push(key);
+            if (key.substr(0,2)!='F-') {
+                if (!documents.hasOwnProperty(key)) continue;
+                documentsArray.push(key);
+            } 
         }
         return documentsArray;
     }
 
+    getForms(): string[] {
+        const formsArray: string[] = [];
+        const forms = {...this.DataStorage};
+        const formsKeysList = Object.keys(forms);
+        for (const name of formsKeysList) {
+            if (name.substr(0,2)=='F-') {
+                formsArray.push(name);
+            }
+        }
+        return formsArray;
+    }
+
     removeDocument(key: string): void {
         this.DataStorage.removeItem(key);
+    }
+
+    saveForm(formObject: Form, name: string): string {
+        const savedForm = this.DataStorage.setItem(`F-${name}-${Date.now()}`, JSON.stringify(formObject));
+        return savedForm;
     }
 }

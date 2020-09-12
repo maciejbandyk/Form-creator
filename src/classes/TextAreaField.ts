@@ -17,10 +17,14 @@ export class TextAreaField  implements IField {
     Input: HTMLTextAreaElement;
 
     render(container: HTMLTextAreaElement): void {
-        new FieldLabel(container, 'question-label', this.Label);
+        const fieldContainer = document.createElement('div');
+        fieldContainer.classList.add('form-group');
+        new FieldLabel(fieldContainer, 'question-label', this.Label);
         const element = document.createElement('textarea');
+        element.classList.add('form-control');
         element.value = this.Value;
-        container.appendChild(element);     
+        fieldContainer.appendChild(element);   
+        container.appendChild(fieldContainer);  
         this.Input = element;
         element.addEventListener('keyup', (ev) => {
             this.Value = ev.target.value;

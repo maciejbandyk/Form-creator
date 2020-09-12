@@ -19,9 +19,13 @@ export class SelectField  implements IField {
     Input: HTMLSelectElement;
     
     render(container: HTMLElement): void {
-        new FieldLabel(container, 'question-label', this.Label);
+        const fieldContainer = document.createElement('div');
+        fieldContainer.classList.add('form-group');
+        new FieldLabel(fieldContainer, 'question-label', this.Label);
         const element = document.createElement('select');
-        container.appendChild(element);
+        element.classList.add('form-control');
+        fieldContainer.appendChild(element);
+        container.appendChild(fieldContainer);
         this.Options.forEach( (text) => {
             const optionElement = document.createElement('option');
             optionElement.value = text;
