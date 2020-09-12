@@ -5,16 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Creator</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="main.css">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet" >
+
   </head>
   <body>
-    <div class="container">
-        <div class="menu">
-            <li><a href="/index.html"><span class="fas fa-home"></span> Home</a></li>
-            <li><a href="/new-document.html"><span class="far fa-envelope active"></span> Document</a></li>
-            <li><a href="/document-list.html"><span class="far fa-heart"></span> List</a></li>
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container">
+          <a class="navbar-brand" href="/index.html">Form Creator</a>
+          <a class="nav-link" href="/new-document.html">Documents</a>
+          <a class="nav-link" href="/document-list.html">List</a>
         </div>
-    </div>
+      </nav>
+
+       <div class="container" id="main">
+         <h1>Your list of forms</h1>
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Created</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>             
+              </tbody>
+            </table>
+            <div class="d-flex flex-row-reverse">
+              <div class="p-2">
+                <button class="btn btn-success new">CREATE NEW</button>
+              </div>
+            </div>
+      </div>
+
+      <footer class="footer bg-light">
+        <div class="container">
+          <div class="row">
+            <span class="text-muted">&copy; Form Creator 2020.</span>        
+          </div>
+        </div>
+      </footer>
     <script src="index.ts"></script>
   </body>
 </html>

@@ -4,17 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="main.css">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
     <title>Form Creator</title>
   </head>
   <body>
+
+    <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
-          <div class="menu">
-              <li><a href="/index.html"><span class="fas fa-home"></span> Home</a></li>
-              <li><a href="/new-document.html"><span class="far fa-envelope"></span> Document</a></li>
-              <li><a href="/document-list.html"><span class="far fa-heart active"></span> List</a></li>
-          </div>
+        <a class="navbar-brand" href="/index.html">Form Creator</a>
+        <a class="nav-link" href="/new-document.html">Documents</a>
+        <a class="nav-link" href="/document-list.html">List</a>
       </div>
+    </nav>
+    <div class="container" id="main">
+      
+    </div>
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <span class="text-muted">&copy; Form Creator 2020.</span>        
+        </div>
+      </div>
+    </footer>
     <script src="document-list.ts"></script>
   </body>
 </html>
