@@ -1,6 +1,6 @@
-import { FieldLabel } from './fields/FieldLabel';
-import { IField } from './../interfaces/ifield';
-import { FieldType } from './../enums/field-type.enum';
+import { FieldLabel } from './FieldLabel';
+import { IField } from '../../interfaces/ifield';
+import { FieldType } from '../../enums/field-type.enum';
 
 export class InputField implements IField {
 

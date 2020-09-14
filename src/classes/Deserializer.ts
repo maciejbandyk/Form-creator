@@ -1,5 +1,5 @@
 import { IField } from './../interfaces/ifield';
-import { InputField } from './InputField';
+import { InputField } from './fields/InputField';
 import { CheckboxField } from './fields/CheckboxField';
 import { DateField } from './fields/DateField';
 import { EmailField } from './fields/EmailField';

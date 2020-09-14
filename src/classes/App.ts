@@ -4,7 +4,7 @@ import { SelectField } from './fields/SelectField';
 import { EmailField } from './fields/EmailField';
 import { DateField } from './fields/DateField';
 import { CheckboxField } from './fields/CheckboxField';
-import { InputField } from './InputField';
+import { InputField } from './fields/InputField';
 import { Form } from './Form';
 import { IField } from './../interfaces/ifield';
 
