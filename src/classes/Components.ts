@@ -1,10 +1,10 @@
 import { form } from '../components/new-form/new-form';
-import { CheckboxField } from './CheckboxField';
-import { TextAreaField } from './TextAreaField';
-import { SelectField } from './SelectField';
+import { CheckboxField } from './fields/CheckboxField';
+import { TextAreaField } from './fields/TextAreaField';
+import { SelectField } from './fields/SelectField';
 import { InputField } from './InputField';
-import { EmailField } from './EmailField';
-import { DateField } from './DateField';
+import { EmailField } from './fields/EmailField';
+import { DateField } from './fields/DateField';
 import { IField } from './../interfaces/ifield';
 export class Components {
 

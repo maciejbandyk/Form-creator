@@ -1,10 +1,10 @@
 import { IField } from './../interfaces/ifield';
 import { InputField } from './InputField';
-import { CheckboxField } from './CheckboxField';
-import { DateField } from './DateField';
-import { EmailField } from './EmailField';
-import { SelectField } from './SelectField';
-import { TextAreaField } from './TextAreaField';
+import { CheckboxField } from './fields/CheckboxField';
+import { DateField } from './fields/DateField';
+import { EmailField } from './fields/EmailField';
+import { SelectField } from './fields/SelectField';
+import { TextAreaField } from './fields/TextAreaField';
 
 export class Deserializer {
     

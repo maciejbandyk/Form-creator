@@ -1,9 +1,9 @@
 import { Deserializer } from './Deserializer';
-import { TextAreaField } from './TextAreaField';
-import { SelectField } from './SelectField';
-import { EmailField } from './EmailField';
-import { DateField } from './DateField';
-import { CheckboxField } from './CheckboxField';
+import { TextAreaField } from './fields/TextAreaField';
+import { SelectField } from './fields/SelectField';
+import { EmailField } from './fields/EmailField';
+import { DateField } from './fields/DateField';
+import { CheckboxField } from './fields/CheckboxField';
 import { InputField } from './InputField';
 import { Form } from './Form';
 import { IField } from './../interfaces/ifield';

@@ -1,5 +1,5 @@
-import { IField } from './../interfaces/ifield';
-import { FieldType } from './../enums/field-type.enum';
+import { IField } from '../../interfaces/ifield';
+import { FieldType } from '../../enums/field-type.enum';
 import { FieldLabel } from './FieldLabel';
 
 export class TextAreaField  implements IField {

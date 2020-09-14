@@ -1,4 +1,4 @@
-import { FieldLabel } from './FieldLabel';
+import { FieldLabel } from './fields/FieldLabel';
 import { IField } from './../interfaces/ifield';
 import { FieldType } from './../enums/field-type.enum';
 

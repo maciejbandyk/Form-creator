@@ -1,9 +1,9 @@
-import { IField } from './../interfaces/ifield';
-import { FieldType } from './../enums/field-type.enum';
+import { IField } from '../../interfaces/ifield';
+import { FieldType } from '../../enums/field-type.enum';
 import { FieldLabel } from './FieldLabel';
 
-export class DateField  implements IField {
-    constructor(name: string, label: string, value: string | null) {
+export class EmailField  implements IField {
+    constructor(name: string, label: string, value: string | '') {
         this.Name = name;
         this.Label = label;
         this.Value = value;
@@ -11,7 +11,7 @@ export class DateField  implements IField {
 
     Name: string;    
     Label: string;
-    Type: FieldType = FieldType.Date;
+    Type: FieldType = FieldType.Email;
     Value: string;
     Input: HTMLInputElement;
     
@@ -26,7 +26,14 @@ export class DateField  implements IField {
         container.appendChild(fieldContainer);
         element.value = this.Value;
         this.Input = element;
-        element.addEventListener('change', (ev) => {
+
+        element.addEventListener('keyup', (ev) => {
+            this.Value = ev.target.value;
+        });
+        element.addEventListener('paste', (ev) => {
+            this.Value = ev.target.value;
+        });
+        element.addEventListener('cut', (ev) => {
             this.Value = ev.target.value;
         });
     }
