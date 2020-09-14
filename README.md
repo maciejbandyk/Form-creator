@@ -21,8 +21,7 @@ $ npm install
 To run this project:
 
 ```sh
-$ cd src
-$ parcel index.html
+$ npm start
 ```
 
 License
