@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maciejbandyk/WebAppProject.git"
+    "url": "git+https://github.com/maciejbandyk/Form-creator.git"
   },
   "keywords": [
     "TypeScript"
@@ -17,9 +17,9 @@
   "author": "Maciej Bandyk",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/maciejbandyk/WebAppProject/issues"
+    "url": "https://github.com/maciejbandyk/Form-creator/issues"
   },
-  "homepage": "https://github.com/maciejbandyk/WebAppProject#readme",
+  "homepage": "https://github.com/maciejbandyk/Form-creator#readme",
   "devDependencies": {
     "css-loader": "^3.6.0",
     "gh-pages": "^3.1.0",
