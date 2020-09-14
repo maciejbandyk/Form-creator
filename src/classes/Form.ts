@@ -32,7 +32,11 @@ export class Form {
             }
         });
         formDocument.appendChild(backwardButton);
-        backwardButton.addEventListener('click', function() {window.location.href = "index.html"});
+        backwardButton.addEventListener('click', function(ev) {
+            ev.preventDefault();
+            ev.stopImmediatePropagation();
+            window.location.replace('../document-list/document-list.html');
+        });
         container.appendChild(formDocument);
     }
 
@@ -46,13 +50,13 @@ export class Form {
         const storage = new LocStorage();
         storage.saveEditedDocument(data, key);
         alert("Document edited");
-        window.location.href = "document-list.html";
+        window.location.href = "../document-list/document-list.html";
     }
     
     save(data: Form): void {
         const storage = new LocStorage();
         storage.saveDocument(data);
         alert("Document saved");    
-        window.location.href = "index.html";
+        window.location.href = "../../index.html";
     }   
 }

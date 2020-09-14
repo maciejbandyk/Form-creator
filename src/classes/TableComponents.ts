@@ -9,7 +9,7 @@ export class TableComponents implements IComponent {
 
     localStorage: LocStorage;
 
-    render(container: HTMLElement, name: string, num: number): void {
+    public render(container: HTMLElement, name: string, num: number): void {
         container.appendChild(this.newTableRowElement(name, num));
     }
 
@@ -52,7 +52,7 @@ export class TableComponents implements IComponent {
         const td = document.createElement('td');
         const fillButton = this.newButton('FILL', ['btn', 'btn-info']);
         fillButton.addEventListener('click', () => {
-            window.location.href = `form.html?id=${name}`;
+            window.location.href = `../form/form.html?id=${name}`;
         })
         const deleteButton = this.newButton('DELETE', ['btn', 'btn-danger']);
         deleteButton.addEventListener('click', () => {

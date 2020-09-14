@@ -1,6 +1,6 @@
-import { App } from './classes/App';
-import { Router } from './classes/Router';
-import { FormList } from './classes/FormList';
+import { App } from '../../classes/App';
+import { Router } from '../../classes/Router';
+import { FormList } from '../../classes/FormList';
 
 const appHandler = new App();
 const id = Router.getParam();

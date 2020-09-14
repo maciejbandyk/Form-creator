@@ -41,7 +41,7 @@ export class DocumentList {
                     penElement.addEventListener('click', (ev) => {
                         ev.stopImmediatePropagation();
                         ev.preventDefault();
-                        window.location.href= `edit-document.html?id=${this.ListOfDocuments[r]}`;
+                        window.location.href= `../edit-document/edit-document.html?id=${this.ListOfDocuments[r]}`;
                     });
                     cell.appendChild(penElement);
                 }

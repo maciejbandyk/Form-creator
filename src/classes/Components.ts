@@ -1,4 +1,4 @@
-import { form } from './../new-form';
+import { form } from '../components/new-form/new-form';
 import { CheckboxField } from './CheckboxField';
 import { TextAreaField } from './TextAreaField';
 import { SelectField } from './SelectField';

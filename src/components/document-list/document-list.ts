@@ -1,5 +1,4 @@
-import { Components } from './classes/Components';
-import { DocumentList } from './classes/DocumentList';
+import { DocumentList } from '../../classes/DocumentList';
 const mainContainer = document.getElementById('main');
 const documents = new DocumentList();
 if (documents.getLength() === 0) {

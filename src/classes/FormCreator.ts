@@ -36,7 +36,7 @@ export class FormCreator {
         })
         const backButton = this.componentsHandler.newButton('BACK', ['btn', 'btn-danger']);
         backButton.addEventListener('click', () => {
-            window.location.href='new-document.html';
+            window.location.href='../new-document/new-document.html';
         })
         controlButtonsContainer.append(backButton, saveButton);
     }
@@ -45,7 +45,7 @@ export class FormCreator {
         const storage = new LocStorage();
         const newForm = new Form(this.fields);
         storage.saveForm(newForm, this.formName);
-        window.location.href = 'new-document.html';
+        window.location.href = '../new-document/new-document.html';
     }
 
     public addFormElement(element: IField): void {
